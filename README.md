@@ -4,7 +4,7 @@
 
 ## 功能特性
 
-- ✅ **订阅支持**: 自动从 URL 获取和更新 Clash 格式订阅
+- ✅ **订阅支持**: 自动从 URL 获取和更新订阅
 - ✅ **多入站配置**: 支持配置多个 HTTP/SOCKS 入站端口（JSON 格式）
 - ✅ **节点映射**: 每个入站可指定对应的订阅节点名称
 - ✅ **定时更新**: 支持自动定时更新订阅并重启 Xray
@@ -18,7 +18,7 @@
 复制 `app.conf.example` 文件到`app.conf`，设置你的订阅 URL：
 
 ```bash
-# 订阅URL（必填）
+# 订阅URL（必填）,只支持Xray Json格式,其它订阅可以先转换为Xray Json格式
 SUBSCRIPTION_URL="https://your-subscription-url.com/sub"
 
 # 订阅更新间隔(秒)，默认24小时
