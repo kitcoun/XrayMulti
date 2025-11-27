@@ -2,11 +2,18 @@ services:
   xraymulti:
     container_name: xraymulti
     hostname: xraymulti
-    image: kitcoun/xraymulti:latest
+    image: xraymulti:1.0.0
+    build: 
+      context: .
+      dockerfile: Dockerfile.custom
     restart: always
     ports:
       # XrayMulti 代理端口 (根据 config/app.conf 中的配置)
       - "${PROXY_PORT_RANGE:-11000-11010}:${PROXY_PORT_RANGE:-11000-11010}"
+    env_file:
+      - .env
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       # # XrayMulti 卷映射
       - './config:/opt/xraymulti/config'

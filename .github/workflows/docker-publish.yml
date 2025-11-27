@@ -6,7 +6,7 @@ on:
       dockerfile_path:
         description: 'Path to the Dockerfile'
         required: true
-        default: 'Dockerfile.custom'
+        default: '.github/docker/Dockerfile.custom'
       image_tag:
         description: 'Docker image tag'
         required: true
