@@ -25,7 +25,7 @@
 
 ### 2. 配置 Docker Compose
 
-`docker-compose.yml` 已经配置好了，可以根据需要调整端口映射：
+根据需要调整端口映射：
 
 ```yaml
 services:
