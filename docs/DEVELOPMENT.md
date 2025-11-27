@@ -4,6 +4,8 @@
 
 ### 本地构建
 
+docker 编译文件存放在`.github/docker`
+
 #### 1. 完整构建（推荐）
 
 ```bash
