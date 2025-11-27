@@ -57,16 +57,11 @@ INBOUNDS_JSON='[
 services:
   xraymulti:
     container_name: xraymulti
-    image: xraymulti:1.0.0
-    build: 
-      context: .
-      dockerfile: Dockerfile.custom
+    image: kitcoun/xraymulti:latest
     restart: always
     ports:
       # 根据 config/app.conf 中的 INBOUNDS_JSON 配置端口
       - "11000-11010:11000-11010"
-    environment:
-      - TZ=Asia/Shanghai
     volumes:
       - './config:/opt/xraymulti/config'
       - './logs:/var/log/xraymulti'
