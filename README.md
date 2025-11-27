@@ -21,7 +21,7 @@
 - `protocol`: 协议类型，支持 `http` 或 `socks`
 - `port`: 监听端口
 - `tag`: 入站标签（唯一标识）
-- `name`: 对应订阅 YAML 中的节点名称（完全匹配）
+- `name`: 对应订阅中的节点名称（完全匹配）
 
 ### 2. 配置 Docker Compose
 
