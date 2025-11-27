@@ -1,0 +1,40 @@
+# XrayMulti 应用配置文件示例
+# 复制此文件为 app.conf 并修改相应的配置
+
+# 订阅相关配置
+SUBSCRIPTION_URL="https://your-subscription-url-here"
+SUBSCRIPTION_UPDATE_INTERVAL=86400  # 订阅更新间隔(秒)，默认24小时
+
+# Xray 配置
+XRAY_LOG_LEVEL="warning"
+
+# API 配置（用于 Xray API 控制）
+# 不要暴露 API 到公网
+API_LISTEN="127.0.0.1"  # API 监听地址
+API_PORT="8080"          # API 监听端口
+
+# 入站配置 - JSON 格式
+# 每个入站可以指定对应的订阅节点名称（name 字段）
+# 格式: {"protocol": "协议", "port": 端口, "tag": "标签", "name": "订阅节点名称"}
+# 
+# protocol: socks 或 http
+# port: 监听端口
+# tag: 入站标签（唯一标识）
+# name: 对应订阅 YAML 文件中的节点名称（完全匹配）
+#
+# 示例配置：
+INBOUNDS_JSON='[
+  {"protocol": "socks", "port": 1080, "tag": "proxy1", "name": "香港 01"},
+  {"protocol": "http", "port": 1081, "tag": "proxy2", "name": "美国 02"},
+  {"protocol": "socks", "port": 1082, "tag": "proxy3", "name": "日本 03"},
+  {"protocol": "http", "port": 1083, "tag": "proxy4", "name": "新加坡 04"}
+]'
+
+# 注意事项：
+# 1. name 字段需要与订阅 YAML 中的节点名称完全一致
+# 2. 如果找不到匹配的节点名称，将使用订阅中的第一个节点
+# 3. 可以添加更多入站，只需确保端口不冲突
+# 4. 每个入站会对应到指定名称的节点出站
+
+# 路由策略（保留用于未来扩展）
+ROUTING_STRATEGY="proxy"

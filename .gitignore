@@ -31,6 +31,6 @@ __pycache__/
 # 备份文件
 *.bak
 
-/config/
-!/config/app.conf.example
+config/**
+!config/app.conf.example
 .env

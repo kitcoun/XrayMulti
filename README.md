@@ -15,7 +15,7 @@
 
 ### 1. 配置订阅
 
-编辑 `config/app.conf` 文件，设置你的订阅 URL：
+复制 `app.conf.example` 文件到`app.conf`，设置你的订阅 URL：
 
 ```bash
 # 订阅URL（必填）
