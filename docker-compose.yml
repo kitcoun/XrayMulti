@@ -4,6 +4,8 @@ services:
     hostname: xraymulti
     image: kitcoun/xraymulti:latest
     restart: always
+    networks:
+      - proxy_shared_network
     ports:
       # XrayMulti 代理端口 (根据 config/app.conf 中的配置)
       - "${PROXY_PORT_RANGE:-11000-11010}:${PROXY_PORT_RANGE:-11000-11010}"
@@ -11,3 +13,8 @@ services:
       # # XrayMulti 卷映射
       - './config:/opt/xraymulti/config'
       - './logs:/var/log/xraymulti'
+      
+networks:
+  proxy_shared_network:
+    name: proxy_shared_network
+    driver: bridge
