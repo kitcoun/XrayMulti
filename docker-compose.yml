@@ -8,7 +8,7 @@ services:
       - proxy_shared_network
     ports:
       # XrayMulti 代理端口 (根据 config/app.conf 中的配置)
-      - "${PROXY_PORT_RANGE:-11000-11010}:${PROXY_PORT_RANGE:-11000-11010}"
+      - "127.0.0.1:${PROXY_PORT_RANGE:-11000-11010}:${PROXY_PORT_RANGE:-11000-11010}"
     volumes:
       # # XrayMulti 卷映射
       - './config:/opt/xraymulti/config'
